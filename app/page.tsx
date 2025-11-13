@@ -112,7 +112,8 @@ export default function HomePage() {
             {quizzes.map((quiz) => (
               <Link
                 key={quiz.slug}
-                href={`/quiz`} // plus tard : `/quiz/${quiz.slug}`
+                href={`/quiz/${quiz.slug}`} // plus tard : `/quiz/${quiz.slug}`
+                // href={`/slug`} 
                 className="group"
               >
                 <article className="h-full rounded-2xl bg-slate-800/70 border border-slate-700 shadow-lg p-4 flex flex-col hover:border-sky-400 hover:-translate-y-1 hover:shadow-sky-900/40 transition">
@@ -131,7 +132,7 @@ export default function HomePage() {
                   </p>
 
                   <div className="flex items-center justify-between text-xs text-slate-400">
-                    <span>🧩 10 questions</span>
+                    <span>🧩 30 questions</span>
                     <span className="group-hover:text-sky-300">
                       Commencer &rarr;
                     </span>
