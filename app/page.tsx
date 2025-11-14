@@ -69,9 +69,12 @@ export default function HomePage() {
             <button className="hover:text-sky-300 transition-colors">
               À propos
             </button>
-            <button className="hover:text-sky-300 transition-colors">
+            <Link
+              href="/results"
+              className="hover:text-sky-300 transition-colors text-sm"
+            >
               Résultats
-            </button>
+            </Link>
             <button className="hover:text-sky-300 transition-colors">
               Profil
             </button>
@@ -112,8 +115,7 @@ export default function HomePage() {
             {quizzes.map((quiz) => (
               <Link
                 key={quiz.slug}
-                href={`/quiz/${quiz.slug}`} // plus tard : `/quiz/${quiz.slug}`
-                // href={`/slug`} 
+                href={`/quiz/${quiz.slug}`}
                 className="group"
               >
                 <article className="h-full rounded-2xl bg-slate-800/70 border border-slate-700 shadow-lg p-4 flex flex-col hover:border-sky-400 hover:-translate-y-1 hover:shadow-sky-900/40 transition">
