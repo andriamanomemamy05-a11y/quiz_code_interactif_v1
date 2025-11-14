@@ -1,4 +1,5 @@
 import Link from "next/link";
+import NavbarPage from "../navbar/page";
 
 export default async function ResultsPage({
   searchParams,
@@ -17,17 +18,11 @@ export default async function ResultsPage({
 
   return (
     <main className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white">
-      <div className="max-w-3xl mx-auto px-6 py-10">
-        {/* Retour */}
-        <div className="mb-4 flex justify-between items-center">
-          <Link
-            href="/"
-            className="text-sm text-slate-300 hover:text-sky-300 flex items-center gap-1"
-          >
-            ← Retour à l&apos;accueil
-          </Link>
-        </div>
+      {/* NAVBAR */}
+      <NavbarPage/>
 
+      <div className="max-w-3xl mx-auto px-6 py-10">
+    
         <header className="mb-8">
           <p className="text-xs uppercase tracking-[0.25em] text-sky-300 mb-2">
             Résultats

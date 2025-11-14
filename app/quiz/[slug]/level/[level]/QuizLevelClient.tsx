@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 type QuizLevelClientProps = {
   slug: string;
@@ -306,6 +307,7 @@ export default function QuizLevelClient({ slug, level }: QuizLevelClientProps) {
             </div>
 
           </div>
+          
         </section>
 
         {/* Colonne droite : résultat */}
@@ -313,9 +315,20 @@ export default function QuizLevelClient({ slug, level }: QuizLevelClientProps) {
           <h2 className="text-lg font-semibold mb-3">
             Résultat de l&apos;exécution – Question {currentIndex + 1}
           </h2>
+          
           <div className="bg-black text-green-400 font-mono text-sm p-4 rounded-lg h-[85vh] overflow-y-auto whitespace-pre-wrap border border-slate-800">
             {output ??
               "Aucun résultat pour le moment.\nTape ton code à gauche puis clique sur \"▶ Exécuter le code\"."}
+          </div>
+
+          {/* Retour */}
+          <div className="mb-0 mt-5 text-end">
+            <Link
+              href="/"
+              className="text-sm text-slate-300 hover:text-sky-300 flex items-center gap-1"
+            >
+              ← Retour aux quiz
+            </Link>
           </div>
         </section>
       </div>

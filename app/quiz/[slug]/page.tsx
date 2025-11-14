@@ -1,3 +1,4 @@
+import NavbarPage from "@/app/navbar/page";
 import Link from "next/link";
 
 const QUIZ_LABELS: Record<string, string> = {
@@ -42,16 +43,10 @@ export default async function QuizLevelsPage({
 
   return (
     <main className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white">
+      {/* Navbar */}
+      <NavbarPage/>
+      
       <div className="max-w-4xl mx-auto px-6 py-10">
-        {/* Retour */}
-        <div className="mb-4">
-          <Link
-            href="/"
-            className="text-sm text-slate-300 hover:text-sky-300 flex items-center gap-1"
-          >
-            ← Retour aux quiz
-          </Link>
-        </div>
 
         {/* Titre */}
         <header className="mb-8">
@@ -100,6 +95,16 @@ export default async function QuizLevelsPage({
             </Link>
           ))}
         </section>
+        
+        {/* Retour */}
+        <div className="mb-0 mt-5">
+          <Link
+            href="/"
+            className="text-sm text-slate-300 hover:text-sky-300 flex items-center gap-1"
+          >
+            ← Retour aux quiz
+          </Link>
+        </div>
       </div>
     </main>
   );
