@@ -1,11 +1,5 @@
 import Link from "next/link";
 
-type QuizLevelsPageProps = {
-  params: {
-    slug: string;
-  };
-};
-
 const QUIZ_LABELS: Record<string, string> = {
   "sql-intro": "SQL – Introduction",
   functions: "Fonctions",
@@ -36,8 +30,14 @@ const levels = [
   },
 ];
 
-export default function QuizLevelsPage({ params }: QuizLevelsPageProps) {
-  const { slug } = params;
+export default async function QuizLevelsPage({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
+  // params est un Promise → on attend
+  const { slug } = await params;
+
   const quizTitle = QUIZ_LABELS[slug] ?? "Quiz";
 
   return (

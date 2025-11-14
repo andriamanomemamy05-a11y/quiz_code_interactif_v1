@@ -1,13 +1,12 @@
 import QuizLevelClient from "./QuizLevelClient";
 
-type LevelPageProps = {
-  params: {
-    slug: string;
-    level: string;
-  };
-};
+export default async function LevelPage({
+  params,
+}: {
+  params: Promise<{ slug: string; level: string }>;
+}) {
+  // ⚠️ Avec Next 16, params est un Promise
+  const { slug, level } = await params;
 
-export default function LevelPage({ params }: LevelPageProps) {
-  // Ici, on est côté serveur : on a le droit de lire params.slug / params.level
-  return <QuizLevelClient slug={params.slug} level={params.level} />;
+  return <QuizLevelClient slug={slug} level={level} />;
 }
